@@ -1,7 +1,17 @@
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   entry: [
     './src/index.js'
   ],
+  plugins: [
+    new Dotenv({
+      path: './.env'
+    })
+  ],
+  node: {
+  fs: "empty"
+},
   output: {
     path: __dirname,
     publicPath: '/',
